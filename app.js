@@ -1,7 +1,5 @@
 const loremContainer = document.querySelector("#loremContainer");
-
 const baseLink = "https://picsum.photos/id/";
-
 
 let userInput = parseInt(prompt("Input number of images: "))
 
@@ -14,7 +12,7 @@ if (isNaN(userInput) || userInput > 1000 || userInput <= 0) {
 
     const errorImage = document.createElement("img")
     errorImage.src = "https://cdn-icons-png.flaticon.com/512/10809/10809585.png"
-    errorImage.classList.add("h-[50rem]")
+    errorImage.classList.add("h-[50rem]","max-w-full","h-auto")
 
     const warning = document.createElement("h1")
     warning.textContent = "INPUT A NUMBER!"
@@ -25,8 +23,6 @@ if (isNaN(userInput) || userInput > 1000 || userInput <= 0) {
     errorContainer.append(errorImage, warning)
     body.append(errorContainer);
 } else {
-    console.log("Creating images...")
-
     for (let i = 1; i <= userInput; i++) {
         const loremDiv = document.createElement("div")
         loremDiv.classList.add("border", "p-3", "bg-gray-800", "rounded-lg")
